@@ -1,0 +1,20 @@
+[package]
+name = "ndh-softworld-kernel"
+version = "0.1.0"
+edition = "2021"
+authors = ["Borealis S. Hedling"]
+description = "Zero-float, #![no_std] 80D Symplectic Quest Algebra, Lie Commutator CSR, and Holonomy Tracker for NDH-Gaming-Mathaggedon."
+license = "MIT"
+publish = false
+
+[lib]
+crate-type = ["rlib", "cdylib", "staticlib"]
+
+[dependencies]
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
