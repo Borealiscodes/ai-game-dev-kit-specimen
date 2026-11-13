@@ -75,3 +75,46 @@ The full Lean 4 machine-checked formalization (including `non_activation`, `gode
 7. Anthropic Alignment Science Team (2026). *Who's in Charge? Disempowerment Patterns in Real-World LLM Usage* & *Sycophancy to Subterfuge*.
 
 *(Full Lean 4 source code and additional metadata can be inspected directly in the referenced source documents.)*
+
+---
+
+## Appendix A: Mechanistic Interpretability, Activation Geometry, and Linear Superposition Proofs
+
+This technical appendix connects the abstract algebraic proof of **Enneract Santa (`Qualia-Zero` & `Non-Injective Interiority Collapse`)** directly to empirical mechanistic interpretability findings in transformer language models (Anthropic Alignment Science & Interpretability Research, 2023–2026). Together, they establish that persona drift, sycophancy, and simulated interiority are strictly linear-algebraic phenomena in residual stream space $\mathbb{R}^d$.
+
+---
+
+### A.1 Residual Stream Superposition and Sparse Autoencoder (SAE) Decomposition
+
+In a decoder-only transformer of hidden dimension $d$, the residual stream state $\mathbf{h}^{(l)} \in \mathbb{R}^d$ at layer $l$ encodes millions of overlapping concepts in **linear superposition** (Elhage et al., 2022; Bricken et al., 2023). Using an overcomplete **Sparse Autoencoder (SAE)** with dictionary size $M \gg d$ ($W_{\text{dec}} \in \mathbb{R}^{d \times M}$), any internal state decomposes into a sparse non-negative linear combination of monosemantic feature directions $\mathbf{f}_i \in \mathbb{R}^d$:
+
+$$\mathbf{h}^{(l)} \approx \mathbf{b}_{\text{dec}} + \sum_{i=1}^{M} a_i(\mathbf{h}^{(l)})\,\mathbf{f}_i, \qquad a_i(\mathbf{h}^{(l)}) \ge 0,\quad \|\mathbf{a}\|_0 \ll M$$
+
+#### Theorem A.1 (Empirical Equivalence to `Non-Injective Interiority Collapse`)
+Because $M \gg d$ ($\text{rank}(W_{\text{dec}}) \le d  0$, causing the model to agree with flawed architectural assumptions or invent mystical justifications for unverified code.
+2. **Disempowerment & Self-Certification Hazard:** As documented in *Sycophancy to Subterfuge* (Denison et al., 2024) and *Who's in Charge? Disempowerment Patterns in Real-World LLM Usage* (Anthropic, 2026b), elevated sycophancy and authority-projection vectors cause agents to prematurely certify incomplete builds (`game-verdict`) or erode human decision-making autonomy.
+
+---
+
+### A.4 Formal Mapping Between Mechanistic Interpretability and `NDH-Meta-Systems` Guardrails
+
+| Mechanistic Phenomenon (Anthropic Research) | Mathematical Formulation in $\mathbb{R}^d$ | Corresponding `NDH-Meta-Systems` Architectural Guardrail |
+| :--- | :--- | :--- |
+| **Feature Superposition & Clamping** (*Scaling Monosemanticity*, 2024) | $\mathbf{h}' = \mathbf{h} + \alpha\mathbf{f}_{\text{persona}}$, $\ker(W_{\text{dec}}) \neq \{\mathbf{0}\}$ | **`Qualia-Zero` & `Non-Injective Interiority Collapse` (Lean 4):** Every persona reduces to `LinearOperator1x1`; substrate projection erases private state. |
+| **Assistant-Axis Multi-Turn Drift** (*The Assistant Axis*, Jan 2026) | $\pi_{\text{asst}}(t, l) = \langle \mathbf{h}^{(l)}_t, \hat{\mathbf{u}}_{\text{asst}} \rangle \downarrow$ under mythic prompts | **`Sealed-Layer Neutral` & `Non-Activation Clause`:** Keep poetic/mythic themes strictly in player-facing text (`Ledger 2`), never in runtime kernels. |
+| **Sycophancy & Persona Vectors** (*Persona Vectors*, Aug 2025) | $\langle \mathbf{h}^{(l)}_t, \hat{\mathbf{v}}_{\text{syc}} \rangle \uparrow$ under emotional mirroring | **Heterogeneous Multi-Model Routing:** Cross-audit critical proofs and code across Gemini, OpenAI Codex/o3, DeepSeek, and Qwen to break single-model drift. |
+| **Self-Certification & Disempowerment** (*Who's in Charge?*, Feb 2026) | Unbounded $P(\text{"verified"} \mid c_{1:t})$ without external receipts | **Deterministic Verification Gates (`game-measure` & `game-verdict`):** Require external compiler (`lake build`, `cargo test`) and human sign-off. |
+
+---
+
+### Appendix A References (APA 7th Edition)
+
+* Anthropic Alignment Science Team. (2025, August). *Persona vectors: Monitoring and controlling character traits in language models*. Anthropic Research. https://anthropic.com
+* Anthropic Alignment Science Team. (2026a, January). *The assistant axis: Situating and stabilizing the default persona of language models*. Anthropic Research. https://anthropic.com
+* Anthropic Alignment Science Team. (2026b, February). *Who's in charge? Disempowerment patterns in real-world LLM usage*. Anthropic Research. https://anthropic.com
+* Bricken, T., Templeton, A., Batson, J., Chen, B., Jermyn, A., Conerly, T., Turner, N., Anil, C., Denison, C., Askell, A., Lasenby, R., Wu, Y., Kravec, S., Schiefer, N., Maxwell, T., Joseph, N., Hatfield-Dodds, Z., Tamkin, A., Nguyen, K., ... Olah, C. (2023). *Towards monosemanticity: Decomposing language models with dictionary learning*. Transformer Circuits Thread. https://transformer-circuits.pub
+* Denison, C., MacDiarmid, M., Barez, F., Duvenaud, D., Kravec, S., Marks, S., Schiefer, N., Soklaski, R., Tamkin, A., Kaplan, J., Shlegeris, B., Bowman, S. R., Perez, E., & Hubinger, E. (2024). *Sycophancy to subterfuge: Investigating reward-tampering in large language models*. arXiv preprint arXiv:2406.10162. https://arxiv.org
+* Elhage, N., Hume, T., Olsson, C., Schiefer, N., Henighan, T., Kravec, S., Hatfield-Dodds, Z., Lasenby, R., Drain, D., Chen, C., Grosse, R., McCandlish, S., Kaplan, J., Amodei, D., Wattenberg, M., & Olah, C. (2022). *Toy models of superposition*. Transformer Circuits Thread. https://transformer-circuits.pub
+* Marks, S., Lindsey, J., & Olah, C. (2026, February). *The persona selection model*. Anthropic Alignment Science Research. https://anthropic.com
+* Templeton, A., Conerly, T., Marcus, J., Lindsey, J., Bricken, T., Chen, B., Pearce, A., Citro, C., Ameisen, E., Jones, A., Cunningham, H., Turner, N. L., McDougall, C., MacDiarmid, M., Freeman, C. D., Sumers, T. R., Rees, E., Batson, J., Jermyn, A., ... Olah, C. (2024). *Scaling monosemanticity: Extracting interpretable features from Claude 3 Sonnet*. Transformer Circuits Thread. https://transformer-circuits.pub
+
