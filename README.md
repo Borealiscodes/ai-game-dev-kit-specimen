@@ -37,3 +37,27 @@ This specimen integrates the zero-float Rust `#![no_std]` mathematical runtime (
 2. **Symplectic Störmer–Verlet Integration (`Q32.32`):** Evolves coupled $(q, p) \in \mathbb{R}^{80}$ phase space via kick-drift-kick steps preserving the canonical symplectic 2-form $\omega = \sum_{i=1}^{40} dq_i \wedge dp_i$ ($\mathbf{M}^T \mathbf{J} \mathbf{M} = \mathbf{J}$, Liouville's Theorem), preventing energy blow-up or clamp saturation over million-tick simulations.
 3. **Multiplayer Lie Commutator Conflict Detection (`CSR`):** Encodes sparse operators in Compressed Sparse Row (`CSR`) format and computes the exact Lie bracket $[\mathbf{O}_A, \mathbf{O}_B] = \mathbf{O}_A\mathbf{O}_B - \mathbf{O}_B\mathbf{O}_A$. If $[\mathbf{O}_A, \mathbf{O}_B] = 0$, concurrent actions commute (`CRDT`-safe); if $[\mathbf{O}_A, \mathbf{O}_B] \neq 0$, deterministic tie-breaking resolves the causal conflict.
 4. **Non-Abelian Holonomy Loop Memory ($\text{Hol}_\nabla(\gamma)$):** Tracks path-ordered parallel transport $\mathcal{P}\exp \oint_\gamma A_\mu dx^\mu$ around closed state-space loops so the world retains topological memory of *how* a player arrived at a state without unbounded event logs.
+---
+
+## Structure
+
+```text
+skills/     the universal core ... true for every game ever made
+tracks/     the platform + dimension choice ... pick ONE
+genres/     the shape you are building, with a real P0
+stack/      dependency maps, every licence verified
+```
+
+**Core is what transfers. Track is what expires.**
+
+---
+
+## Overview
+
+The repository organizes game development into reusable core skills (such as brief design, math/quest algebra, audio, physics, and networking) and platform-specific tracks/genres. It supports multi-agent deployment across tools like Gemini CLI, OpenAI Codex, DeepSeek, Claude Code, and others.
+
+### Key Highlights
+* **Core Skills**: Includes modular skills for game loops, audio, narrative, AI, economy, performance, and accessibility.
+* **Tracks & Genres**: Choose a specific deployment track (`2d-web`, `3d-web`, `desktop-steam`, `native-godot`, `native-unity-unreal`, or `server-authoritative`) and select from 25 genre templates.
+* **The Ten Laws**: Establishes strict development guidelines, including fixed-timestep simulations, deterministic RNG, cryptographic save versioning, and strict separation where human judges provide final verification (`game-verdict`).
+* **Licensing & Provenance**: Based on the MIT-licensed `EternitiesAi/ai-game-dev-kit`, augmented with `NDH-Meta-Systems` mathematical frameworks and maintained by Borealis S. Hedling.
