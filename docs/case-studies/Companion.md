@@ -1,5 +1,3 @@
-Here is the copy-pasteable companion case study formatted in Markdown with formal APA 7th Edition references, ready to commit directly alongside your Enneract Santa preprint in Borealiscodes/NDH-Meta-Systems (e.g., as whitepapers/enneractsanta/COMPANION_CASE_STUDY_EMPIRICAL_AI_LITERACY_AND_ANTHROPOMORPHISM.md) or Borealiscodes/ai-game-dev-kit-specimen (under docs/case-studies/):
-markdown
 # Empirical Companion Case Study: Public AI Literacy, Anthropomorphic Attribution, and the Expert Framing Effect
 
 **Author:** Borealis S. Hedling  
