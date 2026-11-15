@@ -1,0 +1,10 @@
+# ALLOWED_SIGNERS — Cryptographic Author & Release Verification Roster
+# Format: <principal> [namespaces="<ns>"] <key-type> <base64-public-key> [comment]
+#
+# Generate your public key line with:
+#   echo "author@example.org namespaces=\"file\" $(cat ~/.ssh/id_ed25519.pub)" >> ALLOWED_SIGNERS
+#
+# Verify any signed artifact offline with:
+#   ssh-keygen -Y verify -f ALLOWED_SIGNERS -I author@example.org -n file -s provenance.jsonld.sig < provenance.jsonld
+
+author@example.org namespaces="file" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIReplaceThisWithYourActualEd25519PublicKeyPayload canonical-author-key
