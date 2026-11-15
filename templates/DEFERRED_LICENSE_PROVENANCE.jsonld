@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://schema.org",
+    "http://w3.org"
+  ],
+  "@type": ["SoftwareSourceCode", "odrl:Set"],
+  "name": "<PROJECT_NAME>",
+  "version": "<VERSION>",
+  "author": {
+    "@type": "Person",
+    "name": "<AUTHOR_OR_FOUNDER_NAME>",
+    "identifier": "<ORCID_OR_PUBLIC_KEY_FINGERPRINT>"
+  },
+  "codeRepository": "<CANONICAL_REPOSITORY_URI>",
+  "licenseStatus": "DEFERRED_ALL_RIGHTS_RESERVED",
+  "berneNotice": "Protected automatically under Berne Convention Art. 2 & Art. 6bis. Moral rights of attribution and integrity are reserved.",
+  "odrl:permission": [
+    {
+      "odrl:action": "odrl:read",
+      "odrl:constraint": [
+        {
+          "odrl:leftOperand": "attributionPreserved",
+          "odrl:operator": "odrl:eq",
+          "odrl:rightOperand": true
+        }
+      ]
+    }
+  ],
+  "odrl:prohibition": [
+    { "odrl:action": "odrl:commercialize" },
+    { "odrl:action": "odrl:repackage" },
+    { "odrl:action": "ai:datasetIngestion" },
+    { "odrl:action": "mcp:unboundScraping" }
+  ],
+  "cryptographicVerification": {
+    "algorithm": "Ed25519",
+    "detachedSignature": "provenance.jsonld.sig",
+    "allowedSigners": "ALLOWED_SIGNERS"
+  }
+}
